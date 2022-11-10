@@ -9,19 +9,17 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            embedded
-            loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
-        >
-                <a-image
-                    src="assets/asset.jpeg"
-                    look-at="[gps-camera]"
-                    scale="2 2 2"
-                    gps-entity-place="latitude: 56.96330393235052; longitude: 24.128133058547974;"
-                ></a-image>
+        <a-scene embedded
+                 loading-screen="enabled: true;"
+                 arjs="sourceType: webcam; debugUIEnabled: false;">
+            <a-image src="assets/asset.jpeg"
+                     look-at="[gps-camera]"
+                     scale="2 2 2"
+                     gps-entity-place="latitude: 56.96330393235052; longitude: 24.128133058547974;"></a-image>
 
-                <a-camera gps-camera="maxDistance: 10;" rotation-reader></a-camera>
+            <a-camera gps-camera="maxDistance: 10;" rotation-reader></a-camera>
+            <a-camera gps-camera="positionMinAccuracy: 10;"> </a-camera>
+            <a-camera gps-camera="gpsMinDistance: 15;"> </a-camera>
         </a-scene>
     </body>
 </html>
